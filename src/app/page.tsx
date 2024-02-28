@@ -161,7 +161,15 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
       <main className={styles.main}>
         <div
           style={{
@@ -268,45 +276,43 @@ export default function Home() {
             />
           </div>
         </div>
-        <div></div>
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            alignItems: 'center',
+            paddingTop: '4rem',
+            borderLeft: '1px solid #000',
+          }}
+        >
+          <h1>Mortgage calculator</h1>
+          <AppPie
+            mortgage={+monthlyPayment}
+            data01={[
+              {
+                name: 'Principal and interest',
+                value:
+                  +monthlyPayment -
+                  checkForNumeric(tpm) -
+                  checkForNumeric(ipm) -
+                  checkForNumeric(pmi) -
+                  checkForNumeric(hoa),
+              },
+              {
+                name: 'Other monthly expenses',
+                value:
+                  checkForNumeric(tpm) +
+                  checkForNumeric(ipm) +
+                  checkForNumeric(pmi) +
+                  checkForNumeric(hoa),
+              },
+            ]}
+          />
+        </div>
       </main>
-      <div
-        style={{
-          position: 'fixed',
-          right: 0,
-          top: 0,
-          left: '50%',
-          bottom: 0,
-          backgroundColor: '#eee',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <h1>Mortgage calculator</h1>
-        <AppPie
-          mortgage={+monthlyPayment}
-          data01={[
-            {
-              name: 'Principal and interest',
-              value:
-                +monthlyPayment -
-                checkForNumeric(tpm) -
-                checkForNumeric(ipm) -
-                checkForNumeric(pmi) -
-                checkForNumeric(hoa),
-            },
-            {
-              name: 'Other monthly expenses',
-              value:
-                checkForNumeric(tpm) +
-                checkForNumeric(ipm) +
-                checkForNumeric(pmi) +
-                checkForNumeric(hoa),
-            },
-          ]}
-        />
-      </div>
-    </>
+    </div>
   );
 }

@@ -1,8 +1,11 @@
 .main {
   display: flex;
   padding: 4rem;
-  gap: 8rem;
+  gap: 4rem;
   position: relative;
+  max-width: 1400px;
+  margin: auto;
+  flex: 1;
 }
 
 .main > div {

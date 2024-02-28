@@ -27,7 +27,14 @@ const Bullet = ({ backgroundColor, size }: any) => {
 const CustomizedLegend = (props: any) => {
   const { payload } = props;
   return (
-    <>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '0.5rem',
+      }}
+    >
       {payload.map((entry: any, index: any) => (
         <div
           key={`item-${index}`}
@@ -38,7 +45,7 @@ const CustomizedLegend = (props: any) => {
           <div className='BulletLabelText'>{entry.value}</div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

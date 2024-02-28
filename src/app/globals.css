@@ -2,10 +2,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.recharts-legend-wrapper {
-  display: flex;
-  align-items: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
