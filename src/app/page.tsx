@@ -285,12 +285,12 @@ export default function Home() {
       >
         <h1>Mortgage calculator</h1>
         <AppPie
-          mortgage={monthlyPayment}
+          mortgage={+monthlyPayment}
           data01={[
             {
               name: 'Principal and interest',
               value:
-                monthlyPayment -
+                +monthlyPayment -
                 checkForNumeric(tpm) -
                 checkForNumeric(ipm) -
                 checkForNumeric(pmi) -

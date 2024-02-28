@@ -11,7 +11,7 @@ import {
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-const Bullet = ({ backgroundColor, size }) => {
+const Bullet = ({ backgroundColor, size }: any) => {
   return (
     <div
       className='CirecleBullet'
@@ -24,11 +24,11 @@ const Bullet = ({ backgroundColor, size }) => {
   );
 };
 
-const CustomizedLegend = (props) => {
+const CustomizedLegend = (props: any) => {
   const { payload } = props;
   return (
     <>
-      {payload.map((entry, index) => (
+      {payload.map((entry: any, index: any) => (
         <div
           key={`item-${index}`}
           className='BulletLabel'
@@ -128,7 +128,9 @@ export default function AppPie({
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
           <Label
-            content={<CustomLabel labelText='Mortgage' value={mortgage} />}
+            content={
+              <CustomLabel labelText='Mortgage' value={mortgage} viewBox={{}} />
+            }
             position='center'
           />
         </Pie>
